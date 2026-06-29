@@ -9,6 +9,10 @@ const app = new App({
   socketMode: true
 });
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max) + 1;
+}
+
 app.command("/kitulicek-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
   await ack();
@@ -22,20 +26,40 @@ app.command("/kitulicek-help", async ({ ack, respond }) => {
     text:
 `Available Commands:
 /kitulicek-ping - Check bot latency
-/kitulicek-catfact - Get a cat fact`
+/kitulicek-roll - Roll dice`
   });
 });
 
-app.command("/kitulicek-catfact", async ({ ack, respond }) => {
+app.command("/kitulicek-roll", async ({ command, ack, respond }) => {
   await ack();
 
-  try {
-    const response = await axios.get("https://catfact.ninja/fact");
-    await respond({ text: `Cat Fact:\n${response.data.fact}` });
-  } catch (err) {
-    await respond({ text: "Failed to fetch a cat fact." });
+  if (!command.text.trim()) {
+    await respond({
+        text: "❌ You need to use format **XdY**.\nFor example:\n• `/kitulicek-roll d20`\n• `/kitulicek-roll 3d6`\n• `/kitulicek-roll 2d10`"
+    });
+    return;
   }
+
+  const parts = command.text.split("d");
+
+  const count = parts[0] === "" ? 1 : parseInt(parts[0]);
+  const sides = parseInt(parts[1]);
+
+  const rolls = [];
+  let total = 0;
+
+  for (let i = 0; i < count; i++) {
+    const roll = getRandomInt(sides);
+    rolls.push(roll);
+    total += roll;
+  }
+
+  await respond({
+    text: `🎲 Rolled ${count}d${sides}\nResults: ${rolls.join(", ")}\nTotal: ${total}`
+  });
 });
+
+
 
 (async () => {
   await app.start();
