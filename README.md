@@ -37,6 +37,9 @@
 
 `npm install`
 
+### 🤖 Acknowledgments
+This bot was built with the assistance of AI. As a complete beginner, I used AI to help me understand the Slack Bolt framework, debug code, design features, and write documentation.
+
 
 ### Configuration
 
