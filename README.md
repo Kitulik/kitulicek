@@ -9,12 +9,12 @@ You can use Kitulicek in Hack Club slack [#bot-spam channel](https://hackclub.en
 
 # What can it do
 | command | use |
-/kitulicek-ping | Check bot latency
-/kitulicek-roll | Roll any dice you can think of
-/kitulicek-bored | Get a random activity suggestion
-/kitulicek-compliment | You will get a random compliment
-/kitulicek-pool | Create a poll (only in set channel)
-/kitulicek-pool-delete | Delete your poll
+|/kitulicek-ping | Check bot latency |
+|/kitulicek-roll | Roll any dice you can think of |
+|/kitulicek-bored | Get a random activity suggestion |
+|/kitulicek-compliment | You will get a random compliment |
+|/kitulicek-pool | Create a poll (only in set channel) |
+|/kitulicek-pool-delete | Delete your poll |
 
 # How to run your own Kitulicek
 ## Prerequisites
