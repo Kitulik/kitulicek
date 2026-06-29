@@ -26,7 +26,8 @@ app.command("/kitulicek-help", async ({ ack, respond }) => {
     text:
 `Available Commands:
 /kitulicek-ping - Check bot latency
-/kitulicek-roll - Roll dice`
+/kitulicek-roll - Roll dice
+/kitulicek-bored - Get a random activity suggestion`
   });
 });
 
@@ -59,7 +60,21 @@ app.command("/kitulicek-roll", async ({ command, ack, respond }) => {
   });
 });
 
-
+app.command("/kitulicek-bored", async ({ ack, respond }) => {
+  await ack();
+  try {
+    const response = await axios.get("https://bored-api.appbrewery.com/random");
+    await respond({ text: `
+      What you can do:\n${response.data.activity}
+      Availability: ${response.data.availability}
+      Price: ${response.data.price}
+      Type: ${response.data.type}
+      Duration: ${response.data.duration}
+      Kid Friendly: ${response.data.kidFriendly}` });
+  } catch (err) {
+    await respond({ text: "Failed to fetch a bored activity. Go touch some grass!" });
+  }
+});
 
 (async () => {
   await app.start();
