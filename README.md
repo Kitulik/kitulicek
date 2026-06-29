@@ -33,6 +33,7 @@ npm install
 Create a `.env` file in the root directory:
 
 `SLACK_BOT_TOKEN=xoxb-your-bot-token`
+
 `SLACK_APP_TOKEN=xapp-your-app-token`
 
 and change ID of poll channel
