@@ -31,11 +31,11 @@
 ### Installation
 
 
-`git clone https://github.com/Kitulik/kitulicek
+`git clone https://github.com/Kitulik/kitulicek`
 
-cd kitulicek
+`cd kitulicek`
 
-npm install`
+`npm install`
 
 
 ### Configuration
@@ -43,9 +43,9 @@ npm install`
 Create a `.env` file in the root directory:
 
 
-`SLACK_BOT_TOKEN=xoxb-your-bot-token
+`SLACK_BOT_TOKEN=xoxb-your-bot-token`
 
-SLACK_APP_TOKEN=xapp-your-app-token`
+`SLACK_APP_TOKEN=xapp-your-app-token`
 
 
 ### Running the bot
