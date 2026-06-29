@@ -32,7 +32,9 @@
 
 
 git clone https://github.com/Kitulik/kitulicek
+
 cd kitulicek
+
 npm install
 
 
