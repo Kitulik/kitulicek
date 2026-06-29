@@ -24,7 +24,9 @@ You can use Kitulicek in Hack Club slack [#bot-spam channel](https://hackclub.en
 
 ## Installation
 git clone https://github.com/Kitulik/kitulicek
+
 cd kitulicek
+
 npm install
 
 ## Configuration
